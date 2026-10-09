@@ -1,8 +1,27 @@
-# Welcome to your CDK TypeScript project
+# AWS New EventBridge Custom Event Bus PoC
 
-This is a blank project for CDK development with TypeScript.
+This proof of concept uses the [relaunched EventBridge event bus](https://aws.amazon.com/about-aws/whats-new/2026/09/eventbridge-relaunches-custom-event-buses/). It creates an event bus in two regions, with messages forwarded between regions, and a Lambda function in each region to log the events they receive.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+![Architecture diagram](docs/EventBridge%20Bus.drawio.png)
+
+## Setup
+
+1. Ensure you have Node.js 22 or higher installed on your machine
+2. Ensure you have the [AWS CLI](https://aws.amazon.com/cli/) installed on your machine
+3. Configure a terminal session with AWS programmatic credentials
+4. Install this repo's dependencies
+   ```bash
+   npm ci
+   ```
+5. Run the CDK's boostrap command to ensure you AWS account is configured correctly
+   ```bash
+   npx cdk boostrap
+   ```
+6. Deploy the AWS resources
+   ```bash
+   npm run deploy
+   ```
+
 
 ## Useful commands
 
